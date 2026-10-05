@@ -19,3 +19,13 @@
 - Report the commit ID and verification performed.
 - Do not claim remote preservation unless the push was verified.
 - Do not initiate provisioning or shutdown; Athena controls those steps.
+
+## Pull request workflow
+- Start each task from the latest origin/main on a new daedalus/* branch.
+- Commit and push only the task branch.
+- Open a pull request targeting main and request graystone-john's review.
+- Include the changes, actual verification results, and next task.
+- Never push directly to main, merge your own pull request, or bypass rules.
+- Do not initiate provisioning; wait for the approved revision.
+- You may read ../ai-forge and ../ai-stores for context and cite their
+  file paths and commit IDs. Keep edits inside this sandbox repository.
