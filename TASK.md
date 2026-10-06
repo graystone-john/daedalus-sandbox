@@ -18,3 +18,11 @@ Review the Demo Validation GitHub Actions run and its desktop/mobile screenshot 
 - Mission Control panel present and verified by browser tests.
 
 Next: propose next demo improvement per AGENTS.md rules.
+
+## Current checkpoint
+
+Cycle 3: Recovery Checkpoint panel added to Mission Control.
+
+## Next task
+
+Review GitHub Actions result for the Recovery Checkpoint changes, record verified outcome, and propose next demo improvement.

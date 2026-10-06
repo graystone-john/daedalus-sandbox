@@ -91,6 +91,10 @@ try:
                     assert page.get_by_text("Snapshot from recorded project state — not live monitoring").is_visible()
                     for label in ("Current Goal", "Progress", "Last Completed Step", "Next Task"):
                         assert mission.locator(f".label:has-text('{label}')").is_visible(), f"Mission panel missing {label}"
+                    # Recovery Checkpoint panel checks
+                    for label in ("Recovery Checkpoint", "Hostname", "OS", "Git Revision Inspected", "Inspection Time (America/Chicago)"):
+                        assert mission.locator(f".label:has-text('{label}')").is_visible(), f"Mission panel missing {label}"
+                    assert page.get_by_text("This is a recorded snapshot of the current machine state at inspection time. It does not prove a restore occurred.").is_visible()
 
                     # Add browser-only fixtures so sorting is tested even
                     # when the real journal contains just one entry.
