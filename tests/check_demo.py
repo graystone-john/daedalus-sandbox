@@ -84,6 +84,14 @@ try:
                     stamps = [e["stamp"] for e in entries]
                     assert stamps == sorted(stamps), "Initial order is incorrect"
 
+                    # Mission Control panel checks
+                    mission = page.locator("section.mission")
+                    assert mission.is_visible(), "Mission Control panel missing"
+                    assert page.get_by_role("heading", name="MISSION CONTROL", exact=True).is_visible()
+                    assert page.get_by_text("Snapshot from recorded project state — not live monitoring").is_visible()
+                    for label in ("Current Goal", "Progress", "Last Completed Step", "Next Task"):
+                        assert mission.locator(f".label:has-text('{label}')").is_visible(), f"Mission panel missing {label}"
+
                     # Add browser-only fixtures so sorting is tested even
                     # when the real journal contains just one entry.
                     page.locator(".journal").evaluate("""journal => {
