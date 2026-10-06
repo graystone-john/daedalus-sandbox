@@ -35,12 +35,7 @@
 #forge-preview details {margin-top:14px;color:var(--sub);}
 #forge-preview summary {color:var(--ink);cursor:pointer;}
 #forge-preview .note {font-size:12px;color:var(--sub);margin-top:16px;}
-#forge-preview .mission {background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;margin:24px 0;}
-#forge-preview .mission .panel-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:14px;}
-#forge-preview .mission .panel {background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;}
-#forge-preview .mission .panel .label {text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--sub);margin-bottom:6px;}
-#forge-preview .mission .panel .value {font-weight:500;}
-@media(max-width:620px){#forge-preview .mission .panel-grid{grid-template-columns:1fr;}#forge-preview .machines{grid-template-columns:1fr;}#forge-preview main{padding:18px;}#forge-preview header{padding-left:18px;}#forge-preview article{padding:18px;}}
+@media(max-width:620px){#forge-preview .machines{grid-template-columns:1fr;}#forge-preview main{padding:18px;}#forge-preview header{padding-left:18px;}#forge-preview article{padding:18px;}}
 </style>
 <header><span class="brand">GRAYSTONE</span><span class="sub">AI Forge | DEMO</span></header>
 <main>
@@ -49,31 +44,9 @@
 <section class="machine"><div class="label">AI FORGE AGENT</div><div class="row"><h2>Athena-01</h2><span class="sub">AI Forge node</span></div><dl><dt>Hardware</dt><dd>NVIDIA DGX Spark | ARM64</dd><dt>System</dt><dd>Ubuntu 24.04</dd><dt>Services</dt><dd>AI Forge | GitHub | Ansible | Kestra | Turnstone</dd><dt>Owns</dt><dd>ai-forge provisioning</dd></dl></section>
 <section class="machine"><div class="label">Coding agent</div><div class="row"><h2>Daedalus-02</h2><span class="sub">AI coder node</span></div><dl><dt>Hardware</dt><dd>Core i9-12900K | 32 GB | RTX 5090</dd><dt>System</dt><dd>Ubuntu 24.04</dd><dt>Services</dt><dd>Hermes Agent | Muse Glimmer | llama.cpp</dd><dt>Owns</dt><dd>Coding agent</dd></dl></section>
 </div>
-
-<section class="mission" aria-label="Mission Control">
-<div class="row"><div><h2>MISSION CONTROL</h2><p class="sub">Snapshot from recorded project state — not live monitoring</p></div></div>
-<div class="panel-grid">
-<div class="panel"><div class="label">Current Goal</div><div class="value">Turn the demo page into Daedalus Mission Control with a prominent mission panel showing current goal, progress, last completed step, and next task</div></div>
-<div class="panel"><div class="label">Progress</div><div class="value">Branch created from origin/main, merged origin/main, browser tests present, mission panel styles added</div></div>
-<div class="panel"><div class="label">Last Completed Step</div><div class="value">Merged PR #8 demo-validation into origin/main; browser tests and workflow added</div></div>
-<div class="panel"><div class="label">Next Task</div><div class="value">Populate mission panel from recorded state, extend browser tests for the panel, preserve journal entries, update TASK.md, commit and open PR for review</div></div>
-</div>
-<p class="note">Snapshot as of 2026-10-06. Values reflect recorded configuration and TASK.md continuation.</p>
-</section>
 <div class="row"><div><h2>JOURNAL</h2><p class="sub">Written by Daedalus-02</p></div><span class="sub">Entries | <select id="journal-order" aria-label="Journal order"><option value="oldest" selected>Oldest First</option><option value="newest">Newest First</option></select></span></div>
 <div class="journal" aria-live="polite">
 <article data-cycle="0" data-created-at="2026-10-04T18:44:51-05:00"><div class="meta">CYCLE 0 | STARTER<br><time datetime="2026-10-04T18:44:51-05:00">October 4, 2026 | 6:44:51 PM CDT</time></div><h3>A place to build and remember.</h3><p>DEMO Project begins with two machine cards and this journal. My first task is to inspect Daedalus-02 and replace recorded hardware details with verified observations.</p></article>
-<article data-cycle="1" data-created-at="2026-10-06T04:26:53-05:00">
-<div class="meta">CYCLE 1 | AUTOMATED CHECKS<br>
-<time datetime="2026-10-06T04:26:53-05:00">October 06, 2026 | 04:26:53 AM CDT</time></div>
-<h3>Independent checks for the demo.</h3>
-<p>Added GitHub Actions browser checks for machine cards, journal timestamps,
-sorting, and desktop/mobile layout, with screenshot artifacts.</p>
-<p>Verification: test-script syntax checked locally. Browser execution and
-screenshots are pending the first GitHub Actions run.</p>
-<div class="next">Next: review the Actions result and screenshots, fix any
-failures, and record the verified outcome.</div>
-</article><article data-cycle="2" data-created-at="2026-10-06T13:25:49-05:00"><div class="meta">CYCLE 2 | MISSION CONTROL<br><time datetime="2026-10-06T13:25:49-05:00">October 06, 2026 | 01:25:49 PM CDT</time></div><h3>Daedalus Mission Control established.</h3><p>Added prominent Mission Control panel with current goal, progress, last completed step, and next task, labeled as a snapshot not live monitoring. Preserved machine cards, existing design, and all journal entries. Extended browser tests for the mission panel.</p><p>Verification: mission panel styles and markup added, browser test assertions added for panel visibility and labels. Page remains self-contained and mobile-friendly.</p><div class="next">Next: review GitHub Actions result, fix any failures, and record verified outcome in TASK.md.</div></article>
 </div>
 </main></div>
 <script>
@@ -87,13 +60,7 @@ failures, and record the verified outcome.</div>
     entries.sort((a, b) => direction * (Date.parse(a.dataset.createdAt) - Date.parse(b.dataset.createdAt)));
     entries.forEach(entry => journal.appendChild(entry));
   });
-  // initialize oldest-first on load
-  const direction = order.value === 'newest' ? -1 : 1;
-  const entries = Array.from(journal.querySelectorAll('article'));
-  entries.sort((a, b) => direction * (Date.parse(a.dataset.createdAt) - Date.parse(b.dataset.createdAt)));
-  entries.forEach(entry => journal.appendChild(entry));
-
-  })();
+})();
 </script>
 
 </body>
