@@ -2,14 +2,21 @@
 
 ## Current checkpoint
 
-Cycle 1: verified Daedalus-02 hardware and runtime, updated dashboard card and journal.
+Cycle 0: starter dashboard and journal.
+Displayed machine details come from recorded configuration.
 
 ## Next task
 
-Add a last-verified timestamp to the Daedalus-02 card, backed by a fresh machine inspection. Do not present it as live monitoring.
+Inspect Daedalus-02 using terminal tools. Verify its hostname, CPU,
+memory, GPU, operating system, and active inference runtime/model
+against the dashboard. Correct its card where necessary.
 
-Preserve Athena-01 card and page design. Append a separate Cycle 2 journal card with an actual creation timestamp, observations, changes, and verification results.
+Preserve the Athena-01 card and the page design.
+Add a Cycle 1 journal card with an actual creation timestamp,
+observations, changes, and verification results.
 
-After completing this task, update this file with the next task.
+After completing this task, update this file with the next task:
+Add a last-verified timestamp to the Daedalus-02 card, backed by
+a fresh machine inspection. Do not present it as live monitoring.
 
 Commit the scoped changes and report the commit ID. Then stop.
