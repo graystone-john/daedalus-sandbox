@@ -2,21 +2,17 @@
 
 ## Current checkpoint
 
-Cycle 0: starter dashboard and journal.
-Displayed machine details come from recorded configuration.
+Cycle 1: hardware verification complete.
+Daedalus-02 card updated to verified specs; Cycle 1 journal card added with actual creation timestamp.
 
 ## Next task
 
-Inspect Daedalus-02 using terminal tools. Verify its hostname, CPU,
-memory, GPU, operating system, and active inference runtime/model
-against the dashboard. Correct its card where necessary.
+Add a last-verified timestamp to the Daedalus-02 card, backed by a fresh machine inspection. Do not present it as live monitoring.
 
-Preserve the Athena-01 card and the page design.
-Add a Cycle 1 journal card with an actual creation timestamp,
-observations, changes, and verification results.
+Preserve Cycle 0, Cycle 1, and the Athena-01 card and page design.
+Append a separate article card for the verification update with a unique cycle number and actual ISO 8601 data-created-at timestamp including timezone offset.
 
 After completing this task, update this file with the next task:
-Add a last-verified timestamp to the Daedalus-02 card, backed by
-a fresh machine inspection. Do not present it as live monitoring.
+Record a snapshot of the active inference runtime/model configuration in the journal, including model alias, context size, and host/port, and verify it matches the running llama-server process.
 
 Commit the scoped changes and report the commit ID. Then stop.
